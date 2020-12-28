@@ -149,10 +149,9 @@ instance foldableTuple :: Foldable (Tuple a) where
   foldMap f (Tuple _ x) = f x
 
 instance foldable1Tuple :: Foldable1 (Tuple a) where
-  foldMap1 f (Tuple _ x) = f x
-  fold1 (Tuple _ x) = x
   foldr1 _ (Tuple _ x) = x
   foldl1 _ (Tuple _ x) = x
+  foldMap1 f (Tuple _ x) = f x
 
 instance foldableWithIndexTuple :: FoldableWithIndex Unit (Tuple a) where
   foldrWithIndex f z (Tuple _ x) = f unit x z
